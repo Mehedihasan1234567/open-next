@@ -3540,7 +3540,7 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/node_modules/.pnpm/next@16.1.4_@babel+core@7.28.6_babel-plugin-react-compiler@1.0.0_react-dom@19.2.3_react@19.2.3__react@19.2.3/node_modules/next/dist/server/load-manifest.external.js": {
-      "bytes": 19175,
+      "bytes": 19233,
       "imports": [
         {
           "path": "path",
@@ -5563,7 +5563,7 @@
       "format": "cjs"
     },
     "node_modules/.pnpm/next@16.1.4_@babel+core@7.28.6_babel-plugin-react-compiler@1.0.0_react-dom@19.2.3_react@19.2.3__react@19.2.3/node_modules/next/dist/server/load-manifest.external.js": {
-      "bytes": 19175,
+      "bytes": 19233,
       "imports": [
         {
           "path": "path",
@@ -7792,7 +7792,7 @@
       "format": "esm"
     },
     ".open-next/server-functions/default/index.mjs": {
-      "bytes": 90634,
+      "bytes": 90676,
       "imports": [
         {
           "path": "node:module",
@@ -9318,7 +9318,7 @@
           "bytesInOutput": 7698
         },
         ".open-next/server-functions/default/node_modules/.pnpm/next@16.1.4_@babel+core@7.28.6_babel-plugin-react-compiler@1.0.0_react-dom@19.2.3_react@19.2.3__react@19.2.3/node_modules/next/dist/server/load-manifest.external.js": {
-          "bytesInOutput": 13319
+          "bytesInOutput": 13357
         },
         "node_modules/.pnpm/next@16.1.4_@babel+core@7.28.6_babel-plugin-react-compiler@1.0.0_react-dom@19.2.3_react@19.2.3__react@19.2.3/node_modules/next/dist/compiled/@vercel/og/index.edge.js": {
           "bytesInOutput": 535006
@@ -9609,7 +9609,7 @@
           "bytesInOutput": 682
         },
         "node_modules/.pnpm/next@16.1.4_@babel+core@7.28.6_babel-plugin-react-compiler@1.0.0_react-dom@19.2.3_react@19.2.3__react@19.2.3/node_modules/next/dist/server/load-manifest.external.js": {
-          "bytesInOutput": 13285
+          "bytesInOutput": 13323
         },
         "node_modules/.pnpm/next@16.1.4_@babel+core@7.28.6_babel-plugin-react-compiler@1.0.0_react-dom@19.2.3_react@19.2.3__react@19.2.3/node_modules/next/dist/server/runtime-reacts.external.js": {
           "bytesInOutput": 909
@@ -9936,10 +9936,10 @@
           "bytesInOutput": 4969
         },
         ".open-next/server-functions/default/index.mjs": {
-          "bytesInOutput": 58977
+          "bytesInOutput": 59015
         }
       },
-      "bytes": 4751073
+      "bytes": 4751187
     }
   }
 }

@@ -293,6 +293,9 @@
     "bundlePagesRouterDependencies": false,
     "configFileName": "next.config.ts",
     "reactCompiler": true,
+    "serverExternalPackages": [
+      "@vercel/og"
+    ],
     "turbopack": {
       "root": "/home/mehedi/practice-projects/my-opennext-app"
     },
