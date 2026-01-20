@@ -8,7 +8,7 @@ const staticGenerationAsyncStorage = {
         if (store) {
             store.isOnDemandRevalidate =
                 store.isOnDemandRevalidate &&
-                    !globalThis.__openNextAls.getStore().isISRRevalidation;
+                    !globalThis.__als.getStore().isISRRevalidation;
         }
         return store;
     },

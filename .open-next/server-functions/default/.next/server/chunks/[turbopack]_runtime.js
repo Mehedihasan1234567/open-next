@@ -509,13 +509,7 @@ function applyModuleFactoryName(factory) {
 async function externalImport(id) {
     let raw;
     try {
-        switch (id) {
-  case "next/dist/compiled/@vercel/og/index.node.js":
-    raw = await import("next/dist/compiled/@vercel/og/index.edge.js");
-    break;
-  default:
-    raw = await import(id);
-};
+        raw = await import(id);
     } catch (err) {
         // TODO(alexkirsz) This can happen when a client-side module tries to load
         // an external module we don't provide a shim for (e.g. querystring, url).
@@ -652,7 +646,7 @@ function loadRuntimeChunkPath(sourcePath, chunkPath) {
     }
     try {
         const resolved = path.resolve(RUNTIME_ROOT, chunkPath);
-        const chunkModules = requireChunk(chunkPath);
+        const chunkModules = require(resolved);
         installCompressedModuleFactories(chunkModules, 0, moduleFactories);
         loadedChunks.add(chunkPath);
     } catch (cause) {
@@ -681,7 +675,7 @@ function loadChunkAsync(chunkData) {
             const resolved = path.resolve(RUNTIME_ROOT, chunkPath);
             // TODO: consider switching to `import()` to enable concurrent chunk loading and async file io
             // However this is incompatible with hot reloading (since `import` doesn't use the require cache)
-            const chunkModules = requireChunk(chunkPath);
+            const chunkModules = require(resolved);
             installCompressedModuleFactories(chunkModules, 0, moduleFactories);
             entry = loadedChunk;
         } catch (cause) {
@@ -799,41 +793,3 @@ module.exports = (sourcePath)=>({
 
 
 //# sourceMappingURL=%5Bturbopack%5D_runtime.js.map
-
-  function requireChunk(chunkPath) {
-    switch(chunkPath) {
-      case "server/chunks/ssr/[root-of-the-server]__11fa4345._.js": return require("/home/mehedi/practice-projects/my-opennext-app/.open-next/server-functions/default/.next/server/chunks/ssr/[root-of-the-server]__11fa4345._.js");
-      case "server/chunks/ssr/[root-of-the-server]__35b53eeb._.js": return require("/home/mehedi/practice-projects/my-opennext-app/.open-next/server-functions/default/.next/server/chunks/ssr/[root-of-the-server]__35b53eeb._.js");
-      case "server/chunks/ssr/[root-of-the-server]__7c3600ce._.js": return require("/home/mehedi/practice-projects/my-opennext-app/.open-next/server-functions/default/.next/server/chunks/ssr/[root-of-the-server]__7c3600ce._.js");
-      case "server/chunks/ssr/[root-of-the-server]__a55abada._.js": return require("/home/mehedi/practice-projects/my-opennext-app/.open-next/server-functions/default/.next/server/chunks/ssr/[root-of-the-server]__a55abada._.js");
-      case "server/chunks/ssr/[root-of-the-server]__cac582ce._.js": return require("/home/mehedi/practice-projects/my-opennext-app/.open-next/server-functions/default/.next/server/chunks/ssr/[root-of-the-server]__cac582ce._.js");
-      case "server/chunks/ssr/[turbopack]_runtime.js": return require("/home/mehedi/practice-projects/my-opennext-app/.open-next/server-functions/default/.next/server/chunks/ssr/[turbopack]_runtime.js");
-      case "server/chunks/ssr/_5bb865ad._.js": return require("/home/mehedi/practice-projects/my-opennext-app/.open-next/server-functions/default/.next/server/chunks/ssr/_5bb865ad._.js");
-      case "server/chunks/ssr/_next-internal_server_app__not-found_page_actions_554ec2bf.js": return require("/home/mehedi/practice-projects/my-opennext-app/.open-next/server-functions/default/.next/server/chunks/ssr/_next-internal_server_app__not-found_page_actions_554ec2bf.js");
-      case "server/chunks/ssr/b937e_next_dist_893e0305._.js": return require("/home/mehedi/practice-projects/my-opennext-app/.open-next/server-functions/default/.next/server/chunks/ssr/b937e_next_dist_893e0305._.js");
-      case "server/chunks/ssr/b937e_next_dist_adc22bec._.js": return require("/home/mehedi/practice-projects/my-opennext-app/.open-next/server-functions/default/.next/server/chunks/ssr/b937e_next_dist_adc22bec._.js");
-      case "server/chunks/ssr/b937e_next_dist_client_components_640deadd._.js": return require("/home/mehedi/practice-projects/my-opennext-app/.open-next/server-functions/default/.next/server/chunks/ssr/b937e_next_dist_client_components_640deadd._.js");
-      case "server/chunks/ssr/b937e_next_dist_client_components_builtin_forbidden_b2217bc0.js": return require("/home/mehedi/practice-projects/my-opennext-app/.open-next/server-functions/default/.next/server/chunks/ssr/b937e_next_dist_client_components_builtin_forbidden_b2217bc0.js");
-      case "server/chunks/ssr/b937e_next_dist_esm_build_templates_app-page_aed97aa7.js": return require("/home/mehedi/practice-projects/my-opennext-app/.open-next/server-functions/default/.next/server/chunks/ssr/b937e_next_dist_esm_build_templates_app-page_aed97aa7.js");
-      case "server/chunks/ssr/src_app_5b2047f8._.js": return require("/home/mehedi/practice-projects/my-opennext-app/.open-next/server-functions/default/.next/server/chunks/ssr/src_app_5b2047f8._.js");
-      case "server/chunks/ssr/[root-of-the-server]__bca8e307._.js": return require("/home/mehedi/practice-projects/my-opennext-app/.open-next/server-functions/default/.next/server/chunks/ssr/[root-of-the-server]__bca8e307._.js");
-      case "server/chunks/ssr/_next-internal_server_app__global-error_page_actions_75761787.js": return require("/home/mehedi/practice-projects/my-opennext-app/.open-next/server-functions/default/.next/server/chunks/ssr/_next-internal_server_app__global-error_page_actions_75761787.js");
-      case "server/chunks/ssr/b937e_next_dist_f66f150f._.js": return require("/home/mehedi/practice-projects/my-opennext-app/.open-next/server-functions/default/.next/server/chunks/ssr/b937e_next_dist_f66f150f._.js");
-      case "server/chunks/[externals]_next_dist_03fe02e0._.js": return require("/home/mehedi/practice-projects/my-opennext-app/.open-next/server-functions/default/.next/server/chunks/[externals]_next_dist_03fe02e0._.js");
-      case "server/chunks/[root-of-the-server]__d57fb360._.js": return require("/home/mehedi/practice-projects/my-opennext-app/.open-next/server-functions/default/.next/server/chunks/[root-of-the-server]__d57fb360._.js");
-      case "server/chunks/[turbopack]_runtime.js": return require("/home/mehedi/practice-projects/my-opennext-app/.open-next/server-functions/default/.next/server/chunks/[turbopack]_runtime.js");
-      case "server/chunks/_next-internal_server_app_favicon_ico_route_actions_353150a5.js": return require("/home/mehedi/practice-projects/my-opennext-app/.open-next/server-functions/default/.next/server/chunks/_next-internal_server_app_favicon_ico_route_actions_353150a5.js");
-      case "server/chunks/ssr/[root-of-the-server]__19577d1a._.js": return require("/home/mehedi/practice-projects/my-opennext-app/.open-next/server-functions/default/.next/server/chunks/ssr/[root-of-the-server]__19577d1a._.js");
-      case "server/chunks/ssr/[root-of-the-server]__37d86eb6._.js": return require("/home/mehedi/practice-projects/my-opennext-app/.open-next/server-functions/default/.next/server/chunks/ssr/[root-of-the-server]__37d86eb6._.js");
-      case "server/chunks/ssr/[root-of-the-server]__a8c7fc3d._.js": return require("/home/mehedi/practice-projects/my-opennext-app/.open-next/server-functions/default/.next/server/chunks/ssr/[root-of-the-server]__a8c7fc3d._.js");
-      case "server/chunks/ssr/[root-of-the-server]__bdca3202._.js": return require("/home/mehedi/practice-projects/my-opennext-app/.open-next/server-functions/default/.next/server/chunks/ssr/[root-of-the-server]__bdca3202._.js");
-      case "server/chunks/ssr/[root-of-the-server]__fa29f4be._.js": return require("/home/mehedi/practice-projects/my-opennext-app/.open-next/server-functions/default/.next/server/chunks/ssr/[root-of-the-server]__fa29f4be._.js");
-      case "server/chunks/ssr/_35d237d3._.js": return require("/home/mehedi/practice-projects/my-opennext-app/.open-next/server-functions/default/.next/server/chunks/ssr/_35d237d3._.js");
-      case "server/chunks/ssr/_next-internal_server_app_page_actions_39d4fc33.js": return require("/home/mehedi/practice-projects/my-opennext-app/.open-next/server-functions/default/.next/server/chunks/ssr/_next-internal_server_app_page_actions_39d4fc33.js");
-      case "server/chunks/ssr/b937e_next_dist_client_components_builtin_global-error_9ee6bc80.js": return require("/home/mehedi/practice-projects/my-opennext-app/.open-next/server-functions/default/.next/server/chunks/ssr/b937e_next_dist_client_components_builtin_global-error_9ee6bc80.js");
-      case "server/chunks/ssr/b937e_next_dist_client_components_builtin_unauthorized_37865d88.js": return require("/home/mehedi/practice-projects/my-opennext-app/.open-next/server-functions/default/.next/server/chunks/ssr/b937e_next_dist_client_components_builtin_unauthorized_37865d88.js");
-      case "server/chunks/ssr/node_modules__pnpm_f54f35aa._.js": return require("/home/mehedi/practice-projects/my-opennext-app/.open-next/server-functions/default/.next/server/chunks/ssr/node_modules__pnpm_f54f35aa._.js");
-      default:
-        throw new Error(`Not found ${chunkPath}`);
-    }
-  }
