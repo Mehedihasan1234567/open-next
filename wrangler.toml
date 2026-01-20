@@ -6,7 +6,3 @@ compatibility_flags = ["nodejs_compat"]
 [assets]
 directory = ".open-next/assets"
 binding = "ASSETS"
-
-[[build.module_rules]]
-type = "Wasm"
-globs = ["**/*.wasm"]
