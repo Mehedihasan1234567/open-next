@@ -5,11 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
-    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy"
+    "preview": "open-next build && open-next preview",
+    "deploy": "open-next build && open-next deploy"
   },
   "dependencies": {
-    "@opennextjs/cloudflare": "^1.14.9",
     "next": "16.1.4",
     "react": "19.2.3",
     "react-dom": "19.2.3"
@@ -22,6 +21,7 @@
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.1.4",
+    "open-next": "^3.1.3",
     "tailwindcss": "^4",
     "typescript": "^5",
     "wrangler": "^4.59.2"
